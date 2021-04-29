@@ -5,7 +5,7 @@ on:
 
 jobs:
   test1:
-    runs-on: [self-hosted, inux]
+    runs-on: [self-hosted, linux]
     steps:
       - name: Echo something
         run: echo 'something'
