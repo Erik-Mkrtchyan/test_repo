@@ -1,0 +1,13 @@
+name: Test Action
+on:
+  push:
+    branches: [master]
+
+jobs:
+  test1:
+    runs-on: [self-hosted, inux]
+    steps:
+      - name: Echo something
+        run: echo 'something'
+
+
