@@ -14,8 +14,8 @@ jobs:
           submodules: recursive
     
       - name: call 1
-        uses: ./.github/actions/Test_Action
-        
+        #uses: ./.github/actions/Test_Action
+        uses: ./.github/actions/test1
         
       - name: call 2
-        uses: ./.github/actions/test_2
+        uses: ./.github/actions/job1
