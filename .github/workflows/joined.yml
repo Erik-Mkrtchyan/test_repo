@@ -13,9 +13,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive
     
-      - name: call 1
+      #- name: call 1
         #uses: ./.github/actions/Test_Action
-        uses: ./.github/actions/test1
+      #  uses: ./.github/actions/test1
         
-      - name: call 2
-        uses: ./.github/actions/job1
+      #- name: call 2
+      #  uses: ./.github/actions/job1
+
+      - name: cat
+        run: ls -l ./.github
