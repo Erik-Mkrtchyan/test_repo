@@ -1,21 +1,23 @@
 name: joined
 
 on:
-  workflow_run:
-    workflows: ["Test_Action"]
-    types:
-      - completed
+  schedule:
+    - cron: '* * * * *'
 
 jobs: 
   combine:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v2.3.4
-        with:
-          ref: ${{ github.head_ref }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          submodules: recursive
+    
+      - name: Hllo
+        run: echo 'Hello'
+    
+      #- name: checkout
+      #  uses: actions/checkout@v2.3.4
+      #  with:
+      #    ref: ${{ github.head_ref }}
+      #    token: ${{ secrets.GITHUB_TOKEN }}
+      #    submodules: recursive
     
       #- name: call 1
         #uses: ./.github/actions/Test_Action
