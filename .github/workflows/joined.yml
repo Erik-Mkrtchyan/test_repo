@@ -21,4 +21,4 @@ jobs:
       #  uses: ./.github/actions/job1
 
       - name: cat
-        run: ls -a ./.github/workflows
+        run: gh workflow run ./.github/actions/test_action.yml
