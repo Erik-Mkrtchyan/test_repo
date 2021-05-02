@@ -3,14 +3,14 @@ name: joined
 on:
   workflow_dispatch:
   schedule:
-    - cron: '51 13 * * *'
+    - cron: '5 * * * *'
 
 jobs: 
   combine:
     runs-on: ubuntu-latest
     steps:
     
-      - name: Hllo
+      - name: Hello
         run: echo 'Hello'
     
       #- name: checkout
