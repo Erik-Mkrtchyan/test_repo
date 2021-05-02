@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - name: Echo something
-        run: echo 'something'
+        run: echo 'something'; echo $GITHUB_ENV
 
 
