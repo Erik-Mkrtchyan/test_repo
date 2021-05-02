@@ -1,7 +1,9 @@
 name: Test_Action
 on:
-  push:
-    branches: [master]
+  workflow_run:
+    workflows: ["joined"]
+    types:
+      - requested
 
 jobs:
   test1:
