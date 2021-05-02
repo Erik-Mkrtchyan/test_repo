@@ -1,6 +1,10 @@
 name: joined
 
-on: push
+on:
+  workflow_run:
+    workflows: ["Test_Action"]
+    types:
+      - completed
 
 jobs: 
   combine:
