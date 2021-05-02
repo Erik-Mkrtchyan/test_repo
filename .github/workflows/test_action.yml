@@ -1,4 +1,4 @@
-name: Test Action
+name: Test_Action
 on:
   push:
     branches: [master]
