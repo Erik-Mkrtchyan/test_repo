@@ -1,0 +1,8 @@
+name: test 2
+
+on: push
+
+jobs:
+  job1:
+    - name: j_1
+    run: echo j_1
