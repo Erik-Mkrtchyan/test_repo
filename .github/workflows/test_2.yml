@@ -4,5 +4,7 @@ on: push
 
 jobs:
   job1:
-    - name: j_1
-    run: echo j_1
+    runs-on: ubuntu-latest
+    steps:
+      - name: j_1
+        run: echo j_1
