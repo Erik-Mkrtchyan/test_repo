@@ -1,6 +1,10 @@
 name: test_2
 
-on: push
+on:
+  workflow_run:
+    workflows: ["joined"]
+    types:
+      - requested
 
 jobs:
   job1:
