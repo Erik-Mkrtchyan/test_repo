@@ -1,8 +1,6 @@
 name: joined
 
-on:
-  schedule:
-    - cron: '* * * * *'
+on: push
 
 jobs: 
   combine:
