@@ -17,10 +17,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive
     
-      - name: call 1
-        uses: ./.github/workflows/a
-      - uses: ./.github/workflows/b
-        name: call2
       #- name: call 1
         #uses: ./.github/actions/Test_Action
       #  uses: ./.github/actions/test1
