@@ -20,7 +20,7 @@ jobs:
             echo "PR_URL=https://github.com/${GITHUB_REPOSITORY}/pull/${{github.event.pull_request.number}}"
             
       - name: FAIL
-        run: echo failed && exit 1
+        run: echo failed && exit 0
             
       #- name: checkout
       #  uses: actions/checkout@v2.3.4
