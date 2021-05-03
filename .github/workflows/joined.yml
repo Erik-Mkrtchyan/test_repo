@@ -1,9 +1,10 @@
 name: joined
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: '* * * * *'
+  #  workflow_dispatch:
+  #schedule:
+  #  - cron: '* * * * *'
+  pull_request: master
 
 jobs: 
   combine:
