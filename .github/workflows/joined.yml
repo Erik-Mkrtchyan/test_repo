@@ -14,7 +14,11 @@ jobs:
         run: |
           echo 'Hello'
           echo ${{ secrets.GITHUB_TOKEN }}
-    
+      - name: url
+        run: |
+            PR_NUMBER=${{github.event.pull_request.number}}
+            echo "PR_URL=https://github.com/${GITHUB_REPOSITORY}/pull/${PR_NUMBER}"
+            
       #- name: checkout
       #  uses: actions/checkout@v2.3.4
       #  with:
