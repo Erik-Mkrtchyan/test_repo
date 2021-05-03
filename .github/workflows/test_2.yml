@@ -9,6 +9,7 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: j_1
         run: echo j_1
