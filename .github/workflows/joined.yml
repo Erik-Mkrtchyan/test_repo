@@ -4,8 +4,8 @@ on:
   #  workflow_dispatch:
   #schedule:
   #  - cron: '* * * * *'
-  pull_request: master
-    
+  pull_request: 
+    branches: master 
 jobs: 
   combine:
     runs-on: ubuntu-latest
