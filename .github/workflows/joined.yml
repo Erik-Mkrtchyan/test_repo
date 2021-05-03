@@ -11,7 +11,9 @@ jobs:
     steps:
     
       - name: Hello
-        run: echo 'Hello'
+        run: |
+          echo 'Hello'
+          echo ${{ secrets.GITHUB_TOKEN }}
     
       #- name: checkout
       #  uses: actions/checkout@v2.3.4
