@@ -8,6 +8,7 @@ on:
 jobs:
   test1:
     runs-on: ubuntu-latest 
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Echo something
         run: echo 'something'; echo $GITHUB_ENV; echo ${GITHUB_REF##*/}
