@@ -1,6 +1,6 @@
 name: new
 on:
-  push:
+  workflow_dispatch:
   
 jobs:
   new_job:
