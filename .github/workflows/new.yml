@@ -1,0 +1,11 @@
+name: new
+on:
+  push:
+  
+jobs:
+  new_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: N
+        run: echo 'NNNN'
+  
