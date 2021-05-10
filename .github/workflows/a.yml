@@ -2,9 +2,10 @@ name: A
 
 on:
   #push:
-  workflow_dispatch:
+  
   schedule: 
     - cron: '* * * * *'
+  workflow_dispatch:
 
 jobs:
   job_A:
