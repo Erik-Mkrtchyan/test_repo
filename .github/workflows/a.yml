@@ -11,4 +11,3 @@ jobs:
     steps:
       - name: AB
         run: echo 'Hello'
-
