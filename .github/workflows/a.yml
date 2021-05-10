@@ -1,0 +1,13 @@
+name: A
+
+on:
+  workflow_dispatch:
+  schedule: '* * * * *'
+
+jobs:
+  job_A:
+    runs-on: ubuntu-latest
+    steps:
+      - name: AB
+        run: echo 'Hello'
+
