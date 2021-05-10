@@ -1,0 +1,14 @@
+name: A
+
+on:
+  push:
+  workflow_dispatch:
+  schedule: 
+    - cron: '* * * * *'
+
+jobs:
+  job_A:
+    runs-on: ubuntu-latest
+    steps:
+      - name: AB
+        run: echo 'Hello'
