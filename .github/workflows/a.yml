@@ -2,7 +2,8 @@ name: A
 
 on:
   workflow_dispatch:
-  schedule: '* * * * *'
+  schedule: 
+    - cron: '* * * * *'
 
 jobs:
   job_A:
