@@ -20,7 +20,7 @@ jobs:
     steps:
     
     #  - name: Check date
-      - if: ${{ github.event.inputs.startDate }} == ''
+      - if: ${{ github.event.inputs.startDate }}
         run: echo "startDate=$(date --date='-2 week' +%F)" >> $GITHUB_ENV
     
       - name: Print
