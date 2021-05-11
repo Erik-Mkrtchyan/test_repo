@@ -22,7 +22,7 @@ jobs:
           
           if [[ '${{ github.event.inputs.startDate }}' == '[2 weeks past]' ]]
           then
-            github.event.inputs.startDate = $(date -v-2w +%F)
+            github.event.inputs.startDate = $(date --date='-2 week' +%F)
           fi
           
           echo ${{ github.event.inputs.startDate }}
