@@ -19,8 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-    #  - name: Check date
-      - if: ${{ !github.event.inputs.startDate }}
+      - name: Check date
+        if: ${{ !github.event.inputs.startDate }}
         run: echo "startDate=$(date --date='-2 week' +%F)" >> $GITHUB_ENV
     
       - name: Print
