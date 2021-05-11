@@ -20,7 +20,7 @@ jobs:
         run: |
           echo ${{ github.event.inputs.versionName }}
           
-          if [[ ${{ github.event.inputs.startDate }} == '[2 weeks past]' ]]
+          if [[ '${{ github.event.inputs.startDate }}' == '[2 weeks past]' ]]
           then
             github.event.inputs.startDate = $(date -v-2w +%F)
           fi
