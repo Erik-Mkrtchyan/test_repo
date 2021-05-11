@@ -12,6 +12,9 @@ on:
         required: true
         default: '[2 weeks past]'
         
+env:
+  startDate=${{ github.event.inputs.startDate }}
+        
 jobs:
   master2release:  
     runs-on: ubuntu-latest
@@ -22,8 +25,8 @@ jobs:
           
           if [[ '${{ github.event.inputs.startDate }}' == '[2 weeks past]' ]]
           then
-            github.event.inputs.startDate = $(date --date='-2 week' +%F)
+            echo 'startDate=$(date --date='-2 week' +%F)' >> $GITHUB_ENV
           fi
           
-          echo ${{ github.event.inputs.startDate }}
+          echo ${{ env.startDate }}
         
