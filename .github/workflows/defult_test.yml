@@ -8,9 +8,8 @@ on:
         required: true
         default: '12.24'
       startDate:
-        description: 'start date'
-        required: true
-        default: '[2 weeks past]'
+        description: 'start date (default: 2 weeks ago)'
+        required: false
         
 env:
   startDate: ${{ github.event.inputs.startDate }}
@@ -21,7 +20,7 @@ jobs:
     steps:
     
     #  - name: Check date
-      - if: ${{ github.event.inputs.startDate }} == '[2 weeks past]'
+      - if: ${{ github.event.inputs.startDate }} == ''
         run: echo "startDate=$(date --date='-2 week' +%F)" >> $GITHUB_ENV
     
       - name: Print
