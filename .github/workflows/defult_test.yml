@@ -19,14 +19,19 @@ jobs:
   master2release:  
     runs-on: ubuntu-latest
     steps:
+    
+      - if: github.event.inputs.startDate == '[2 weeks past]'
+        run: echo "startDate=$(date --date='-2 week' +%F)" >> $GITHUB_ENV
+    
       - name: Print
         run: |
           echo ${{ github.event.inputs.versionName }}
-          
-          if [[ '${{ github.event.inputs.startDate }}' == '[2 weeks past]' ]]
-          then
-            echo 'startDate=$(date --date='-2 week' +%F)' >> $GITHUB_ENV
-          fi
-          
           echo ${{ env.startDate }}
+          
+      #    if [[ '${{ github.event.inputs.startDate }}' == '[2 weeks past]' ]]
+      #    then
+      #      echo 'startDate=$(date --date='-2 week' +%F)' >> $GITHUB_ENV
+      #    fi
+          
+        
         
