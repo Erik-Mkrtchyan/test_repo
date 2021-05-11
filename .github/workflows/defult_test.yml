@@ -20,7 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-      - if: github.event.inputs.startDate == '[2 weeks past]'
+      - name: Check date
+        if: startWith(github.event.inputs.startDate,'[0-9]{4}-[0-9]{2}-[0-9]{2}') != true # == '[2 weeks past]'
         run: echo "startDate=$(date --date='-2 week' +%F)" >> $GITHUB_ENV
     
       - name: Print
