@@ -10,7 +10,7 @@ on:
       startDate:
         description: 'start date'
         required: true
-        default: ${{ env.SD }}
+        default: ${ env.SD }
         
 env:
   SD: '2 weeks past'
