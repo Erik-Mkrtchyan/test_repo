@@ -10,10 +10,7 @@ on:
       startDate:
         description: 'start date'
         required: true
-        default: ${ env.SD }
-        
-env:
-  SD: '2 weeks past'
+        default: '[2 weeks past]'
         
 jobs:
   master2release:  
@@ -23,7 +20,7 @@ jobs:
         run: |
           echo ${{ github.event.inputs.versionName }}
           
-          if [[ ${{ github.event.inputs.startDate }} == '2 weeks past' ]]
+          if [[ ${{ github.event.inputs.startDate }} == '[2 weeks past]' ]]
           then
             github.event.inputs.startDate = $(date -v-2w +%F)
           fi
