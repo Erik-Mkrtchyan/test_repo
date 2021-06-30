@@ -6,7 +6,6 @@ on:
   #  - cron: '* * * * *'
   pull_request: 
     branches: master 
-  push:
   
 jobs: 
   combine:
