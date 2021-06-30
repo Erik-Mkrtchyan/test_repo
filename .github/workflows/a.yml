@@ -3,6 +3,7 @@ name: A
 on:
   pull_request:
     branches: master
+  push:
 
 jobs:
   job_A:
