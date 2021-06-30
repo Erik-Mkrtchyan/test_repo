@@ -3,10 +3,6 @@ name: A
 on:
   pull_request:
     branches: master
-  
-  schedule: 
-    - cron: '* * * * *'
-  workflow_dispatch:
 
 jobs:
   job_A:
