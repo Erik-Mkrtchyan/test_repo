@@ -1,6 +1,7 @@
 name: new
 on:
-  workflow_dispatch:
+  pull_request:
+    branches: master 
   
 jobs:
   new_job:
