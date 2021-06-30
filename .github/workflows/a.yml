@@ -10,7 +10,13 @@ on:
 
 jobs:
   job_A:
+    if: true == false
     runs-on: ubuntu-latest
     steps:
       - name: AB
         run: echo 'Hello'
+  job_B:
+    runs-on: ubuntu-latest
+    steps:
+      - name: BA
+        run: echo 'BA'
