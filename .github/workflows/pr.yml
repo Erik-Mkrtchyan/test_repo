@@ -7,14 +7,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
         with:
-          ref: master
+          ref: x
           fetch-depth: 0
       - name: Create Pull Request
         id: created_pr
         uses: peter-evans/create-pull-request@v3.10.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: x
+          branch: master
           title: Update master from release
           body: Automatically opened PR to merge latest changes from release into master
           labels: ci_run_checks, automerge, changelog_reviewed
