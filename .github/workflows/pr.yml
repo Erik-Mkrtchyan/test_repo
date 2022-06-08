@@ -1,7 +1,5 @@
 name: Autoupdate master from release.
-on:
-  push:
-    branches: [ master ]
+on: push
 
 jobs:
   pr:
