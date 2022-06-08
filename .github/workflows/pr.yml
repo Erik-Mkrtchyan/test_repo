@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
         with:
-          ref: x
+          ref: master
           fetch-depth: 0
           
       - name: change
@@ -18,7 +18,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3.10.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
+          branch: y
           title: Update master from release
           body: Automatically opened PR to merge latest changes from release into master
           labels: ci_run_checks, automerge, changelog_reviewed
