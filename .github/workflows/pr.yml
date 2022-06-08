@@ -9,6 +9,10 @@ jobs:
         with:
           ref: x
           fetch-depth: 0
+          
+      - name: change
+        run: echo "hello" >> file.txt
+        
       - name: Create Pull Request
         id: created_pr
         uses: peter-evans/create-pull-request@v3.10.0
