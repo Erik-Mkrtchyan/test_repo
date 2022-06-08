@@ -9,4 +9,6 @@ jobs:
     steps:
       - name: N
         run: echo 'NNNN'
+      - name: actor
+        run: echo ${{ github.actor }}
   
