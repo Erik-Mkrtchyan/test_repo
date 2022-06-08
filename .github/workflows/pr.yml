@@ -1,24 +1,24 @@
-name: Autoupdate master from release.
-on: push
+# name: Autoupdate master from release.
+# on: push
 
-jobs:
-  pr:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2.4.0
-        with:
-          ref: master
-          fetch-depth: 0
+# jobs:
+#   pr:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2.4.0
+#         with:
+#           ref: master
+#           fetch-depth: 0
           
-      - name: change
-        run: echo "hello" >> file.txt
+#       - name: change
+#         run: echo "hello" >> file.txt
         
-      - name: Create Pull Request
-        id: created_pr
-        uses: peter-evans/create-pull-request@v3.10.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: y
-          title: Update master from release
-          body: Automatically opened PR to merge latest changes from release into master
-          labels: ci_run_checks, automerge, changelog_reviewed
+#       - name: Create Pull Request
+#         id: created_pr
+#         uses: peter-evans/create-pull-request@v3.10.0
+#         with:
+#           token: ${{ secrets.GITHUB_TOKEN }}
+#           branch: y
+#           title: Update master from release
+#           body: Automatically opened PR to merge latest changes from release into master
+#           labels: ci_run_checks, automerge, changelog_reviewed
