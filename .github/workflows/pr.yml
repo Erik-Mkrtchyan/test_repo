@@ -1,0 +1,15 @@
+name: Autoupdate master from release.
+
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Pull Request
+        id: created_pr
+        uses: peter-evans/create-pull-request@v3.10.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: x
+          title: Update master from release
+          body: Automatically opened PR to merge latest changes from release into master
+          labels: ci_run_checks, automerge, changelog_reviewed
