@@ -11,10 +11,11 @@ jobs:
       - name: AB
         run: |
           sleep 10
-          curl -s \
+          curl -s -o info \
                       -H "Accept: application/vnd.github.v3+json" \
                       -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
                       ${{ github.api_url }}/repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha }}
+          cat info
       - name: info
         run: |
             curl -s \
