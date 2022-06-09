@@ -1,16 +1,16 @@
 name: Test_Action
 on:
-  workflow_run:
-    workflows: ["joined"]
-    types:
-      - completed
+  pull_request:
+    branches: [master]
+    types: [labeled, synchronize]
 
 jobs:
   test1:
     runs-on: ubuntu-latest 
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Echo something
         run: echo 'something'; echo $GITHUB_ENV; echo ${GITHUB_REF##*/}
+      - name: actor
+        run: echo ${{ github.actor }}
 
 

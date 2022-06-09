@@ -6,13 +6,11 @@ on:
 
 jobs:
   job_A:
-    if: true == false
     runs-on: ubuntu-latest
     steps:
       - name: AB
-        run: echo 'Hello'
-  job_B:
-    runs-on: ubuntu-latest
-    steps:
-      - name: BA
-        run: echo 'BA'
+        run: |
+          curl \
+                      -H "Accept: application/vnd.github.v3+json" \
+                      -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                      ${{ github.api_url }}/repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha }}
