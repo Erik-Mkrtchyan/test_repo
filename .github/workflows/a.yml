@@ -10,7 +10,13 @@ jobs:
     steps:
       - name: AB
         run: |
-          curl \
+          curl -s \
                       -H "Accept: application/vnd.github.v3+json" \
                       -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
                       ${{ github.api_url }}/repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha }}
+      - name: info
+        run: |
+            curl -s \
+                -H "Accept: application/vnd.github.v3+json" \
+                -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                https://api.github.com/repos/PicsArt/pi-libs/pulls/${{ github.event.number }}
